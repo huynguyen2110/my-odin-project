@@ -1,0 +1,134 @@
+body {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    min-height: 100vh;
+    background-color: #222831;
+}
+
+.header {
+    color: #fac650;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 32px;
+    background-color: #111720;
+    width: 100%;
+    padding: 50px 0px;
+    text-align: center;
+}
+
+.body {
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+.info {
+    font-size: 24px;
+    padding-bottom: 30px;
+}
+
+.sign {
+    font-size: 80px;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    padding-bottom: 50px;
+}
+
+.choose {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.sign-choose {
+    background-color: #393e46;
+    width: 160px;
+    height: 160px;
+    &:hover {
+        background-color: #656971FF;
+    }
+    transition: 0.5s;
+}
+
+button {
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.footer{
+    width: 100%;
+    padding: 40px 0px;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #222831;
+    text-align: center;
+    font-size: 30px;
+    user-select: none;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-title {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+}
+
+.btn-restart {
+    padding: 10px 20px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    background-color: #393e46;
+    font-size: inherit;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+}
+
+.overlay.active {
+    display: block;
+}
+

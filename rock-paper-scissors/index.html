@@ -5,10 +5,43 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
-
-<script src="script.js"> </script>
+    <div class="header">ROCK PAPER SCISSORS</div>
+    <div class="body">
+        <h2 class="text-h2">Choose your weapon</h2>
+        <div class="info">First to score 5 points wins the game</div>
+        <div class="score">
+            <div class="score-player">
+                <div class="sign sign-player">❔</div>
+                <div> Player: <span class="span-score-user">0</span></div>
+            </div>
+            <div>
+                <div class="sign sign-computer">❔</div>
+                <div> Computer: <span class="span-score-computer">0</span></div>
+            </div>
+        </div>
+        <div class="choose">
+            <button class="sign sign-choose" id="rock" onclick="play(event)">
+                    ✊
+            </button>
+            <button class="sign sign-choose" id="paper" onclick="play(event)">
+                    ✋
+            </button>
+            <button class="sign sign-choose" id="scissors" onclick="play(event)">
+                    ✌
+            </button>
+        </div>
+    </div>
+    <div class="footer">Copyright © 2023</div>
+    <div class="modal" >
+        <p class="modal-title" ></p>
+        <button class="btn btn-restart" onclick="resetButton()">Play again</button>
+    </div>
+    <div class="overlay"></div>
+    <script src="script.js"> </script>
 </body>
 </html>
