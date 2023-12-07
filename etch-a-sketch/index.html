@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Etch-a-Sketch</title>
+</head>
+<body>
+    <h1 class="header">Etch-a-sketch</h1>
+    <div class="body">
+        <div class="select-color">
+            <input id="input-color" type="color" onchange="changeColor()">
+            <button id="color-mode" class="active" onclick="changeMode(event)">Color mode</button>
+            <button id="rainbow-mode" onclick="changeMode(event)">Rainbow mode</button>
+            <button id="eraser-mode" onclick="changeMode(event)">Eraser</button>
+            <button id="darkening" onclick="changeMode(event)">Darkening</button>
+
+            <input type="range" class="slider" onchange="changeNumberGird()" id="input-number" min="4" max="64" value="16">
+            <div class="show-number" ></div>
+        </div>
+        <div class="container">
+
+        </div>
+        <div class="select-color">
+            <button id="clear-border" onclick="clearBorder(event)" class="select-mode-button">Clear border</button>
+            <button id="add-border" onclick="addBorder(event)" class="select-mode-button">Add border</button>
+            <button id="clear-mode" onclick="clearMode(event)" class="select-mode-button">Clear</button>
+        </div>
+    </div>
+
+</body>
+</html>
