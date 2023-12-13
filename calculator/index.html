@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="body">
+        <div class="container">
+            <div class="screen">
+                <div class="div-operator"></div>
+                <div class="div-result">0</div>
+            </div>
+            <div class="button-action">
+                <button class="button-clear" onclick="modeClear()">CLEAR</button>
+                <button class="button-delete" onclick="modeDelete()">DELETE</button>
+            </div>
+            <div class="button-operate">
+                <button onclick="addNumber(event.target.value)" value="7">7</button>
+                <button onclick="addNumber(event.target.value)" value="8">8</button>
+                <button onclick="addNumber(event.target.value)" value="9">9</button>
+                <button onclick="addOperate(event.target.value)" value="/">/</button>
+                <button onclick="addNumber(event.target.value)" value="4">4</button>
+                <button onclick="addNumber(event.target.value)" value="5">5</button>
+                <button onclick="addNumber(event.target.value)" value="6">6</button>
+                <button onclick="addOperate(event.target.value)" value="×">×</button>
+                <button onclick="addNumber(event.target.value)" value="3">3</button>
+                <button onclick="addNumber(event.target.value)" value="2">2</button>
+                <button onclick="addNumber(event.target.value)" value="1">1</button>
+                <button onclick="addOperate(event.target.value)" value="-">-</button>
+                <button onclick="addDot()">.</button>
+                <button onclick="addNumber(event)" value="0">0</button>
+                <button onclick="operate()">=</button>
+                <button onclick="addOperate(event.target.value)" value="+">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        Copyright © 2023
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
