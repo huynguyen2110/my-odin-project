@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="body">
+        <div class="image">
+            <div class="div-logo">
+                <img class="logo" src="images/odin-lined.png"/>
+                <div class="text-logo">ODIN</div>
+            </div>
+            <img class="image-background" src="images/halie-west-25xggax4bSA-unsplash.jpg"/>
+        </div>
+        <div class="form" >
+            <div class="padding-30">
+                <h3 class="h3-first">
+                    This is not a real online service! You know you need something like this in your life to help you
+                    realize your deepest dreams.
+                </h3>
+                <h3 class="h3-second">
+                    Sign up now to get started.
+                </h3>
+                <h3>
+                    You know you want to.
+                </h3>
+            </div>
+            <form novalidate>
+                <div class="card">
+                    <h3 class="h3-four">
+                        Let's do this!
+                    </h3>
+                    <div class="group-input">
+                        <div class="input-column first-input">
+                            <label for="first-name">FIRST NAME</label>
+                            <input id="first-name" name="first-name" required>
+                            <span class="error"></span>
+                        </div>
+                        <div class="input-column">
+                            <label for="last-name">LAST NAME</label>
+                            <input id="last-name" name="last-name" required>
+                            <span class="error"></span>
+                        </div>
+                    </div>
+                    <div class="group-input ">
+                        <div  class="input-column first-input">
+                            <label for="email">EMAIL</label>
+                            <input id="email" type="email" name="email" required>
+                            <span class="error"></span>
+                        </div>
+                        <div class="input-column">
+                            <label for="phone-number">PHONE NUMBER</label>
+                            <input id="phone-number" name="phone-number" required>
+                            <span class="error"></span>
+                        </div>
+                    </div>
+                    <div class="group-input ">
+                        <div class="input-column first-input">
+                            <label for="password">PASSWORD</label>
+                            <input id="password" type="password" name="password" required minlength="8" maxlength="16">
+                            <span class="error"></span>
+                        </div>
+                        <div class="input-column">
+                            <label for="confirm-password">CONFIRM PASSWORD</label>
+                            <input id="confirm-password" type="password" name="confirm-password" required>
+                            <span class="error"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="button-create">Create Account</button>
+            </form>
+            <div  class="padding-30 already-account">Already have an account? Log in</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
