@@ -178,6 +178,11 @@ hr {
     margin-top: 30px;
 }
 
+.trending {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
 .trending-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -185,4 +190,10 @@ hr {
     background-color: #ffffff;
     border-radius: 10px;
     gap: 20px;
+}
+
+.trending-item {
+    display: grid;
+    grid-template: auto auto / auto 1fr;
+    gap: 5px 20px;
 }

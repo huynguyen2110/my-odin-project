@@ -10,7 +10,7 @@
 
 # 🚀 Full Stack JavaScript
 
-| Project             | Topic     | Repository                                                                         | Live Preview                                                              |
-|---------------------|-----------|------------------------------------------------------------------------------------| ------------------------------------------------------------------------- |
-| **Sign-up Form**    | Forms     | [Code](https://github.com/huynguyen2110/my-odin-project/tree/main/signup-form)     | [Demo](https://huynguyen2110.github.io/my-odin-project/signup-form/)         |
-| **Admin Dashboard** | Dashboard | [Code](https://github.com/huynguyen2110/my-odin-project/tree/main/admin-dashboard) | [Demo](https://huynguyen2110.github.io/my-odin-project/admin-dashboard/)         |
+| Project             | Topic | Repository                                                                         | Live Preview                                                              |
+|---------------------|-------|------------------------------------------------------------------------------------| ------------------------------------------------------------------------- |
+| **Sign-up Form**    | Forms | [Code](https://github.com/huynguyen2110/my-odin-project/tree/main/signup-form)     | [Demo](https://huynguyen2110.github.io/my-odin-project/signup-form/)         |
+| **Admin Dashboard** | Gird  | [Code](https://github.com/huynguyen2110/my-odin-project/tree/main/admin-dashboard) | [Demo](https://huynguyen2110.github.io/my-odin-project/admin-dashboard/)         |
