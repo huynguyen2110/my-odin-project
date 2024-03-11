@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="body">
+        <div class="header">
+            <h1 class="library">library</h1>
+        </div>
+        <div class="container">
+            <div class="add-book">
+                <button class="open-add-book" onclick="openModal()">
+                    + Add book
+                </button>
+                <dialog>
+                    <form method="POST" class="form-add" onsubmit="submitInfo(event)">
+                        <h2>Add new book</h2>
+                        <input width="100%" placeholder="Title" name="title" id="title" autofocus>
+                        <input width="100%" placeholder="Author" name="author" id="author">
+                        <input width="100%" placeholder="Pages" name="page" id="page">
+                        <button class="read">Submit</button>
+                        <button class="close" type="button" onclick="closeModal()">Close</button>
+                    </form>
+                </dialog>
+            </div>
+            
+            <div class="group-items">
+
+            </div>
+        </div>
+
+        <div class="footer">
+            Copyright © 2024
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
