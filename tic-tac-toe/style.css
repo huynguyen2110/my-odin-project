@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+
+}
+:root{
+    --primary: #1A2B33;
+    --secondary: #1E3640;
+    --grey: #A9BEC8;
+    --dark-cyan: #34C3BE;
+    --lighten-yellow: #F2B138;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--primary);
+}
+
+input[type="radio"]{
+    display:none;
+}
+
+input[type="radio"] + label
+{
+    /*background-image:url(./images/icon-o-transparent.svg);*/
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 50px;
+    width: 50px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+    cursor:pointer;
+}
+input[type="radio"].symbol-O + label {
+    background-image:url(./images/icon-o-gray.svg);
+
+}
+input[type="radio"].symbol-X + label {
+    background-image:url(./images/icon-x-gray.svg);
+}
+
+input[type="radio"].symbol-O:checked + label
+{
+    background-image:url(./images/icon-o-transparent.svg);
+}
+
+input[type="radio"].symbol-X:checked + label
+{
+    background-image:url(./images/icon-x-transparent.svg);
+}
+
+.choose-turn:has(> input[type="radio"]:checked){
+    background-color: var(--grey);
+}
+
+.choose-mode {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 30vw;
+    gap: 40px;
+    .choose-symbol {
+        color: var(--grey);
+        height: 250px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--secondary);
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0px 7px 10px 0px black;
+
+        .broad-choose-turn {
+            background-color: var(--primary);
+            padding: 15px;
+            width: 80%;
+            height: 30%;
+            border-radius: 20px;
+            display: flex;
+            gap: 15px;
+            .choose-turn {
+                width: 50%;
+                border-radius: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+            }
+        }
+    }
+
+    .button-start-game {
+        width: 50%;
+        height: 50px;
+        background-color: var(--lighten-yellow);
+        border-radius: 10px;
+        border: 0px;
+        font-weight: bold;
+        font-size: 16px;
+        color: var(--primary);
+        box-shadow: 0px 4px 6px 2px black;
+    }
+}
+
+.start-game {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 150px;
+        width: 100%;
+        .show-turn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--secondary);
+            color: var(--grey);
+            font-weight: 700;
+            padding: 10px 25px;
+            border-radius: 5px;
+            box-shadow: 0px 3px 5px 0px black;
+            & img{
+                height: 20px;
+                width: 20px;
+                margin-right: 10px;
+            }
+        }
+        .img-restart {
+            height: 30px;
+            padding: 10px;
+            background-color: var(--grey);
+            border-radius: 10px;
+        }
+    }
+
+    .board-game {
+        margin: 50px;
+        width: 400px;
+        height: 400px;
+        /*background-color: var(--grey);*/
+        display: grid;
+        grid-template: repeat(3, 1fr)/ repeat(3, 1fr);
+        gap: 20px;
+
+        &[data-turn="X"] .box-board:hover{
+            background-image:url(./images/icon-o-outline.svg);
+        }
+        &[data-turn="O"] .box-board:hover{
+            background-image:url(./images/icon-x-outline.svg);
+        }
+
+        .box-board {
+            background-color: #0f2938;
+            border-radius: 10px;
+            border: 2px solid rgb(255, 255, 255, 0.2);
+            background-repeat: no-repeat;
+            background-position: center;
+
+            &.box-O {
+                background-image:url(./images/icon-o.svg) !important;
+            }
+            &.box-X {
+                background-image:url(./images/icon-x.svg) !important;;
+            }
+            &.lane-X-win {
+                background-color: var(--dark-cyan);
+                background-image: url("./images/icon-x-transparent.svg") !important;
+            }
+            &.lane-O-win {
+                background-color: var(--lighten-yellow);
+                background-image: url("./images/icon-o-transparent.svg") !important;
+            }
+
+        }
+
+    }
+
+    .show-info {
+        display: flex;
+        width: 100%;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+
+        .score{
+            /*width: 250px;*/
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 0px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+
+        .score-player-X {
+            flex: 0 1 250px;
+            background-color: var(--dark-cyan);
+        }
+        .score-tie {
+            flex: 0 1 250px;
+            background-color: var(--grey);
+        }
+        .score-player-O {
+            flex: 0 1 250px;
+            background-color: var(--lighten-yellow);
+        }
+
+    }
+}
+
+.show-result {
+    position: fixed;
+    top: 30%;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary);
+    gap: 30px;
+
+    .congratulate {
+        color: var(--grey);
+    }
+    .show-player-win {
+        display: flex;
+        align-items: center;
+        color: var(--dark-cyan);
+        gap: 10px;
+    }
+
+    .group-button-redirect {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        .button-redirect {
+            border-radius: 10px;
+            font-weight: 700;
+            padding: 20px 0px;
+            font-size: 18px;
+            border: 0px;
+            box-shadow: 0px 3px 3px 0px black;
+        }
+        .quit {
+            width: 25%;
+            background-color: var(--grey);
+        }
+        .next-round {
+            width: 40%;
+            background-color: var(--lighten-yellow);
+        }
+    }
+}
+
+.hide-div {
+    display: none !important;
+}
+

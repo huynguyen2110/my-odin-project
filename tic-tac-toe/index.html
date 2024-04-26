@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="body">
+        <div class="choose-mode">
+            <div class="show-icon">
+                <img src="images/logo.svg" />
+            </div>
+            <div class="choose-symbol">
+                <h3>PICK PLAYER 1'S SIGN</h3>
+                <div class="broad-choose-turn">
+                    <div class="first-turn choose-turn">
+                        <input type="radio" name="symbol" id="X" value="X" checked class="symbol-X">
+                        <label for="X"></label>
+                    </div>
+
+                    <div class="second-turn choose-turn">
+                        <input type="radio" name="symbol" id="O" value="O" class="symbol-O">
+                        <label for="O"></label>
+                    </div>
+
+
+                </div>
+                <div class="remember">REMEMBER: X GOES FIRST</div>
+            </div>
+            <button class="button-start-game" onclick="screen.handeClickButtonStart()">
+                    START GAME
+            </button>
+        </div>
+        <div class="start-game hide-div">
+            <div class="header">
+                <div class="show-icon">
+                    <img src="images/logo.svg" />
+                </div>
+                <h2 class="show-turn">
+                    <img src="images/icon-x-gray.svg" class="image-show-turn"/> TURN
+                </h2>
+                <div class="show-restart">
+                    <img src="images/icon-restart.svg" class="img-restart" onclick="screen.handleClickButtonReset()"/>
+                </div>
+            </div>
+            <div class="board-game"></div>
+            <div class="show-info">
+                <div class="score-player-X score">
+                    <div>PLAYER X</div>
+                    <h2 class="number-X-wins">0</h2>
+                </div>
+                <div class="score-tie score">
+                    <div>TIES</div>
+                    <h2 class="number-ties">0</h2>
+                </div>
+                <div class="score-player-O score">
+                    <div>PLAYER O</div>
+                    <h2 class="number-O-wins">0</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="show-result hide-div">
+        <p class="congratulate hide-div">CONGRATULATIONS !</p>
+        <div class="show-player-win">
+            <img src="" class="show-image-win hide-div" height="40" width="40"/>
+            <h2 class="text-show-result"></h2>
+        </div>
+        <div class="group-button-redirect">
+            <button class="button-redirect quit" onclick="screen.handleClickQuit()">QUIT</button>
+            <button class="button-redirect next-round" onclick="screen.handleCLickNextRound()">NEXT ROUND</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
