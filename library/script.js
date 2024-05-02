@@ -21,6 +21,16 @@ let array = [
     },
 ]
 
+class InitialAuthor{
+    constructor(id, title, author, page, read) {
+        this.title = title
+        this.id = id
+        this.author = author
+        this.page = page
+        this.read = read
+    }
+}
+
 
 
 const openModal = () => {
@@ -59,13 +69,9 @@ const submitInfo = (event) => {
     const maxValue = array.reduce((max, currentValue) => (
         max.id >= currentValue.id ? max: currentValue
     ))
-    array.push({
-        id: maxValue.id + 1,
-        title: title.value,
-        author: author.value,
-        page: page.value,
-        read: Math.random() > 0.5
-    })
+
+    const authorObject = new InitialAuthor(maxValue.id + 1, title.value, author.value, page.value, Math.random() > 0.5)
+    array.push(authorObject)
     title.value = ''
     author.value = ''
     page.value = ''
