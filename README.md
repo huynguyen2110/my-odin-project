@@ -16,4 +16,4 @@
 | **Admin Dashboard** | Gird  | [Code](https://github.com/huynguyen2110/my-odin-project/tree/main/admin-dashboard) | [Demo](https://huynguyen2110.github.io/my-odin-project/admin-dashboard/)         |
 | **Library**         | Forms | [Code](https://github.com/huynguyen2110/my-odin-project/tree/main/library)         | [Demo](https://huynguyen2110.github.io/my-odin-project/library/)         |
 | **Tic Tac Toe**     | Games | [Code](https://github.com/huynguyen2110/my-odin-project/tree/main/tic-tac-toe)     | [Demo](https://huynguyen2110.github.io/my-odin-project/tic-tac-toe/)         |
-| **Restaurant Page** | Games | [Code](https://github.com/huynguyen2110/my-odin-project/tree/main/restaurant-page)     | [Demo](https://huynguyen2110.github.io/my-odin-project/restaurant-page/dist/)         |
+| **Restaurant Page** | Pages | [Code](https://github.com/huynguyen2110/my-odin-project/tree/main/restaurant-page)     | [Demo](https://huynguyen2110.github.io/my-odin-project/restaurant-page/dist/)         |
