@@ -100,7 +100,6 @@ body {
           display: block !important;
         }
       }
-
     }
     .slide-indicator {
       display: flex;
@@ -115,7 +114,7 @@ body {
         background-color: var(--light-gray);
         height: 3px;
         cursor: pointer;
-        &.show{
+        &.show {
           background-color: #ffffff;
         }
       }
@@ -129,4 +128,3 @@ ul {
 .hide {
   display: none !important;
 }
-

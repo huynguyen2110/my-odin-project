@@ -53,28 +53,24 @@ const customDropdown = (function customDropdown() {
 const customSlide = (function () {
   let arrayImage = [];
   let currentIndex = 0;
-  let timer
+  let timer;
 
   (function __initialScreen() {
-    __initialArray()
-    __start()
-  })()
+    __initialArray();
+    __start();
+  })();
 
-  function __initialArray(){
-    const slideShows = document.querySelectorAll(
-        `.slide-item[data-id]`,
-    );
+  function __initialArray() {
+    const slideShows = document.querySelectorAll(`.slide-item[data-id]`);
     slideShows.forEach((element) => {
-      arrayImage.push(element.getAttribute('data-id'))
+      arrayImage.push(element.getAttribute("data-id"));
     });
   }
 
   function __clearSlideShows() {
-    const slideShows = document.querySelectorAll(
-        `.slide-item[data-id]`,
-    );
+    const slideShows = document.querySelectorAll(`.slide-item[data-id]`);
     const buttonIndicators = document.querySelectorAll(
-        `.button-indicator[data-id]`,
+      `.button-indicator[data-id]`,
     );
     slideShows.forEach((element) => {
       element.classList.remove("show");
@@ -86,45 +82,49 @@ const customSlide = (function () {
 
   function __start() {
     timer = setInterval(() => {
-      goToNext()
-    }, 5000)
+      goToNext();
+    }, 5000);
   }
 
   function __restart() {
-    clearInterval(timer)
-    __start()
+    clearInterval(timer);
+    __start();
   }
 
   function __changeImage() {
-    __clearSlideShows()
-    const slideShow = document.querySelector(`.slide-item[data-id='${arrayImage[currentIndex]}']`)
-    const buttonIndicator = document.querySelector(`.button-indicator[data-id='${arrayImage[currentIndex]}']`)
-    slideShow.classList.add('show')
-    buttonIndicator.classList.add('show')
-    __restart()
+    __clearSlideShows();
+    const slideShow = document.querySelector(
+      `.slide-item[data-id='${arrayImage[currentIndex]}']`,
+    );
+    const buttonIndicator = document.querySelector(
+      `.button-indicator[data-id='${arrayImage[currentIndex]}']`,
+    );
+    slideShow.classList.add("show");
+    buttonIndicator.classList.add("show");
+    __restart();
   }
   function handleButtonChangeImage(event) {
     const currentImage = event.currentTarget.getAttribute("data-id");
-    currentIndex = arrayImage.indexOf(currentImage)
-    __changeImage(currentIndex)
+    currentIndex = arrayImage.indexOf(currentImage);
+    __changeImage(currentIndex);
   }
 
   function goToPrevious() {
-    if(currentIndex === 0){
-      currentIndex = arrayImage.length - 1
+    if (currentIndex === 0) {
+      currentIndex = arrayImage.length - 1;
     } else {
-      currentIndex = currentIndex - 1
+      currentIndex = currentIndex - 1;
     }
-    __changeImage()
+    __changeImage();
   }
 
   function goToNext() {
-    if(currentIndex === arrayImage.length - 1){
-      currentIndex = 0
-    }else {
-      currentIndex = currentIndex + 1
+    if (currentIndex === arrayImage.length - 1) {
+      currentIndex = 0;
+    } else {
+      currentIndex = currentIndex + 1;
     }
-    __changeImage()
+    __changeImage();
   }
 
   return { handleButtonChangeImage, goToPrevious, goToNext };
