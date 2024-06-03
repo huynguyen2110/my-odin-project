@@ -1,0 +1,132 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: mintcream;
+  --dark-blue: #121246;
+  --light-gray: #adabab;
+}
+
+body {
+  .custom-dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+    .group-dropdown {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      .container-dropdown {
+        margin-top: 30px;
+        cursor: pointer;
+
+        .dropdown-content,
+        li {
+          align-content: center;
+          background-color: var(--white);
+          width: 350px;
+          height: 60px;
+          padding-left: 30px;
+          border: 2px solid var(--dark-blue);
+        }
+        .dropdown-button {
+          position: relative;
+        }
+        img {
+          position: absolute;
+          right: 20px;
+          top: 40%;
+        }
+        .dropdown-menu {
+          li {
+            background-color: var(--white);
+            &:not(:last-child) {
+              border-bottom: 0;
+            }
+            &:first-child {
+              border-top: 0;
+            }
+            &:hover {
+              color: var(--white);
+              background-color: var(--light-gray);
+            }
+          }
+          .chosen-option {
+            background-color: var(--dark-blue) !important;
+            color: var(--white);
+          }
+        }
+      }
+    }
+  }
+  .custom-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+    .title-custom-slide {
+      margin-bottom: 30px;
+    }
+    .slide-container {
+      position: relative;
+      .goto-previous,
+      .goto-next {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        cursor: pointer;
+        align-content: center;
+      }
+      .goto-previous {
+        left: 10px;
+      }
+      .goto-next {
+        right: 10px;
+      }
+      .slide-item {
+        height: 450px;
+        display: none;
+        img {
+          /*background-size: contain;*/
+        }
+        &.show {
+          display: block !important;
+        }
+      }
+
+    }
+    .slide-indicator {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      .button-indicator {
+        width: 35px;
+        background-color: var(--light-gray);
+        height: 3px;
+        cursor: pointer;
+        &.show{
+          background-color: #ffffff;
+        }
+      }
+    }
+  }
+}
+ul {
+  list-style-type: none;
+}
+
+.hide {
+  display: none !important;
+}
+
