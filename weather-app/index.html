@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="style.css" rel="stylesheet">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="input-search">
+        <form id="form">
+            <input name="search" id="search" placeholder="Search"/>
+            <div class="error"></div>
+        </form>
+    </div>
+    <div class="display-weather">
+        <div class="weather"></div>
+        <div class="city"></div>
+        <div class="detail">
+            <div class="temperature"></div>
+            <hr />
+            <div class="group-weather">
+                <div class="feel-like">FEELS LIKE: <span class="feel-like-text"></span></div>
+                <div class="wind">WIND: <span class="wind-text"> </span>MPH</div>
+                <div class="humidity">HUMIDITY: <span class="humidity-text"></span>%</div>
+            </div>
+
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

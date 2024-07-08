@@ -1,0 +1,93 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('images/night.jpg');
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    color: #ffffff;
+
+}
+
+.input-search {
+    margin-top: 20px;
+    float: right;
+    margin-right: 25px;
+    input {
+        padding-left: 20px;
+        height: 42px;
+        border-radius: 5px;
+        width: 230px;
+        background: rgba(255, 255, 255, 0.2);
+        font-size: 19px;
+        outline: none;
+        color: #ffffff;
+    }
+}
+
+.display-weather {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    align-content: center;
+    margin-left: 150px;
+    text-transform: uppercase;
+
+    .weather {
+        font-size: 22px;
+    }
+
+    .city {
+        font-size: 40px;
+        font-weight: 700;
+    }
+    .detail {
+        display: flex;
+        gap: 40px;
+        font-weight: 700;
+
+        .temperature {
+            font-size: 150px;
+            position: relative;
+            &::after {
+                content: '\2109';
+                font-size: 25px;
+                position: absolute;
+                top: 10%;
+            }
+        }
+
+        hr {
+            margin: 35px 0;
+            border: 1px solid;
+        }
+
+        .group-weather {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 15px;
+            gap: 15px;
+            .feel-like-text {
+                position: relative;
+                &::after {
+                    content: '\2109';
+                    font-size: 10px;
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
+
+.error {
+    color: red;
+}
+.hide {
+    display: none;
+}
