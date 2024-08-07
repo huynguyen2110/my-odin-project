@@ -59,7 +59,7 @@ body {
           color: var(--text-menu);
           padding: 70px;
           box-sizing: border-box;
-          gap: 30px;
+          gap: 15px;
 
           .list-project {
             width: 100%;

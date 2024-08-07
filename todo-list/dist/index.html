@@ -1,166 +1,232 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!--    <link href="style.css" rel="stylesheet">-->
     <title>Todo List</title>
-<script defer src="bundle.js"></script></head>
-<body>
-<div class="body">
-    <div class="container">
+  <script defer src="bundle.js"></script></head>
+  <body>
+    <div class="body">
+      <div class="container">
         <h1 class="title">// TO-DO</h1>
         <div class="content">
-            <div class="side-bar">
-                <div class="menu">
-
-                </div>
-                <div class="add-new">
-                    <div class="plus" id="plus">
-                        +
-                    </div>
-                </div>
+          <div class="side-bar">
+            <div class="menu"></div>
+            <div class="add-new">
+              <div class="plus" id="plus">+</div>
             </div>
-            <div class="to-do">
-                <div class="list-todo">
-                </div>
+          </div>
+          <div class="to-do">
+            <div class="list-todo"></div>
+          </div>
+          <dialog id="dialog" class="modal-add">
+            <div class="div-title">
+              <h1 class="title-modal">Create new...</h1>
+              <div class="button-close" id="closeModalAdd">×</div>
             </div>
-            <dialog id="dialog" class="modal-add">
-                <div class="div-title">
-                    <h1 class="title-modal">Create new...</h1>
-                    <div class="button-close" id="closeModalAdd">×</div>
+            <div class="content-modal">
+              <div class="sidebar-modal">
+                <div class="menu-modal">
+                  <div class="home item-menu">
+                    <div class="text-item" id="createTodo">Todo</div>
+                  </div>
+                  <div class="today item-menu">
+                    <div class="text-item" id="createProject">Project</div>
+                  </div>
                 </div>
-                <div class="content-modal">
-                    <div class="sidebar-modal">
-                        <div class="menu-modal">
-                            <div class="home item-menu">
-                                <div class="text-item" id="createTodo">
-                                    Todo
-                                </div>
-                            </div>
-                            <div class="today item-menu">
-                                <div class="text-item" id="createProject">
-                                    Project
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <form method="dialog" class="form-dialog hide-div" id="form-add-todo">
-                            <textarea placeholder="Enter new title" required maxlength="30" class="title-item-add"
-                                      id="newTodo"></textarea>
-                        <textarea placeholder="Enter description" class="description-item-add"
-                                  id="description"></textarea>
-                        <div class="choose-time">
-                            <div class="text-date">
-                                Due Date:
-                            </div>
-                            <input type="date" class="input-date" required id="date">
-                        </div>
-                        <div class="choose-priority">
-                            <div class="text-priority">
-                                Priority:
-                            </div>
-                            <input type="radio" name="priority" value="low" id="low" class="input-radio low-input "
-                            required  >
-                            <label for="low" class="label-radio low choose-label-radio">LOW</label>
-
-                            <input type="radio" name="priority" value="medium" id="medium"
-                            class="input-radio medium-input" required >
-                            <label for="medium" class="label-radio medium">MEDIUM</label>
-
-                            <input type="radio" name="priority" value="high" id="high"
-                            class="input-radio high-input" required>
-                            <label for="high" class="label-radio high">HIGH</label>
-
-                            <button class="btn-add-todo" id="btn-add-todo" type="submit">ADD TO DO</button>
-                        </div>
-                    </form>
-
-                    <form  class="form-add-project" id="form-add-project" >
-                        <textarea placeholder="Enter new project" required maxlength="30" class="title-project-add"
-                                  id="new-project"></textarea>
-                        <button class="btn-add-project" id="btn-add-project" type="submit">CREATE PROJECT</button>
-                    </form>
-
+              </div>
+              <form
+                method="dialog"
+                class="form-dialog hide-div"
+                id="form-add-todo"
+              >
+                <textarea
+                  placeholder="Enter new title"
+                  required
+                  maxlength="30"
+                  class="title-item-add"
+                  id="newTodo"
+                ></textarea>
+                <textarea
+                  placeholder="Enter description"
+                  class="description-item-add"
+                  id="description"
+                ></textarea>
+                <div class="choose-time">
+                  <div class="text-date">Due Date:</div>
+                  <input type="date" class="input-date" required id="date" />
                 </div>
-            </dialog>
-            <dialog id="dialog-detail" class="modal-detail">
-                <div class="content-detail">
-                    <div>
-                        <div class="button-close-detail" id="closeModalDetail">×</div>
-                    </div>
-                    <div class="div-info">
-                        <div class="name-detail">Name</div>
-                        <div class="project-detail div-detail">
-                        <span class="title-project-detail title-info">
-                            Project:
-                        </span>
-                            <span class="value-project-detail"></span>
-                        </div>
-                        <div class="priority-detail div-detail">
-                        <span class="title-priority-detail title-info">
-                            Priority:
-                        </span>
-                            <span class="value-priority-detail"></span>
-                        </div>
-                        <div class="date-detail div-detail">
-                        <span class="title-date-detail title-info">
-                            Due Date:
-                        </span>
-                            <span class="value-date-detail"></span>
-                        </div>
-                        <div class="description-detail div-detail">
-                        <span class="title-description-detail title-info">
-                            Description:
-                        </span>
-                            <span class="value-description-detail"></span>
-                        </div>
-                    </div>
+                <div class="choose-priority">
+                  <div class="text-priority">Priority:</div>
+                  <input
+                    type="radio"
+                    name="priority"
+                    value="low"
+                    id="low"
+                    class="input-radio low-input"
+                    required
+                  />
+                  <label for="low" class="label-radio low choose-label-radio"
+                    >LOW</label
+                  >
+
+                  <input
+                    type="radio"
+                    name="priority"
+                    value="medium"
+                    id="medium"
+                    class="input-radio medium-input"
+                    required
+                  />
+                  <label for="medium" class="label-radio medium">MEDIUM</label>
+
+                  <input
+                    type="radio"
+                    name="priority"
+                    value="high"
+                    id="high"
+                    class="input-radio high-input"
+                    required
+                  />
+                  <label for="high" class="label-radio high">HIGH</label>
+
+                  <button class="btn-add-todo" id="btn-add-todo" type="submit">
+                    ADD TO DO
+                  </button>
                 </div>
-            </dialog>
-            <dialog id="dialog-edit" class="modal-edit">
-                <div class="content-edit">
-                    <div>
-                        <div class="button-close-detail" id="closeModalEdit">×</div>
-                    </div>
-                    <form method="dialog" class="form-dialog " id="form-edit-todo">
-                        <input type="hidden" id="id" >
-                            <textarea placeholder="Enter new title" required maxlength="30" class="title-item-add"
-                                      id="editTodo"></textarea>
-                        <textarea placeholder="Enter description" class="description-item-add"
-                                  id="editDescription"></textarea>
-                        <div class="choose-time">
-                            <div class="text-date">
-                                Due Date:
-                            </div>
-                            <input type="date" class="input-date" required id="editDate">
-                        </div>
-                        <div class="choose-priority">
-                            <div class="text-priority">
-                                Priority:
-                            </div>
-                            <input type="radio" name="editPriority" value="low" id="editLow" class="input-radio low-input"
-                                   required data-id="low">
-                            <label for="editLow" class="label-radio editLow">LOW</label>
+              </form>
 
-                            <input type="radio" name="editPriority" value="medium" id="editMedium"
-                                   class="input-radio medium-input" required data-id="medium">
-                            <label for="editMedium" class="label-radio editMedium">MEDIUM</label>
-
-                            <input type="radio" name="editPriority" value="high" id="editHigh"
-                                   class="input-radio high-input" required data-id="high">
-                            <label for="editHigh" class="label-radio editHigh">HIGH</label>
-
-                            <button class="btn-add-todo" id="btn-edit-todo" type="submit">Edit</button>
-                        </div>
-                    </form>
+              <form class="form-add-project" id="form-add-project">
+                <textarea
+                  placeholder="Enter new project"
+                  required
+                  maxlength="30"
+                  class="title-project-add"
+                  id="new-project"
+                ></textarea>
+                <button
+                  class="btn-add-project"
+                  id="btn-add-project"
+                  type="submit"
+                >
+                  CREATE PROJECT
+                </button>
+              </form>
+            </div>
+          </dialog>
+          <dialog id="dialog-detail" class="modal-detail">
+            <div class="content-detail">
+              <div>
+                <div class="button-close-detail" id="closeModalDetail">×</div>
+              </div>
+              <div class="div-info">
+                <div class="name-detail">Name</div>
+                <div class="project-detail div-detail">
+                  <span class="title-project-detail title-info">
+                    Project:
+                  </span>
+                  <span class="value-project-detail"></span>
                 </div>
-            </dialog>
+                <div class="priority-detail div-detail">
+                  <span class="title-priority-detail title-info">
+                    Priority:
+                  </span>
+                  <span class="value-priority-detail"></span>
+                </div>
+                <div class="date-detail div-detail">
+                  <span class="title-date-detail title-info"> Due Date: </span>
+                  <span class="value-date-detail"></span>
+                </div>
+                <div class="description-detail div-detail">
+                  <span class="title-description-detail title-info">
+                    Description:
+                  </span>
+                  <span class="value-description-detail"></span>
+                </div>
+              </div>
+            </div>
+          </dialog>
+          <dialog id="dialog-edit" class="modal-edit">
+            <div class="content-edit">
+              <div>
+                <div class="button-close-detail" id="closeModalEdit">×</div>
+              </div>
+              <form method="dialog" class="form-dialog" id="form-edit-todo">
+                <input type="hidden" id="id" />
+                <textarea
+                  placeholder="Enter new title"
+                  required
+                  maxlength="30"
+                  class="title-item-add"
+                  id="editTodo"
+                ></textarea>
+                <textarea
+                  placeholder="Enter description"
+                  class="description-item-add"
+                  id="editDescription"
+                ></textarea>
+                <div class="choose-time">
+                  <div class="text-date">Due Date:</div>
+                  <input
+                    type="date"
+                    class="input-date"
+                    required
+                    id="editDate"
+                  />
+                </div>
+                <div class="choose-priority">
+                  <div class="text-priority">Priority:</div>
+                  <input
+                    type="radio"
+                    name="editPriority"
+                    value="low"
+                    id="editLow"
+                    class="input-radio low-input"
+                    required
+                    data-id="low"
+                  />
+                  <label for="editLow" class="label-radio editLow">LOW</label>
+
+                  <input
+                    type="radio"
+                    name="editPriority"
+                    value="medium"
+                    id="editMedium"
+                    class="input-radio medium-input"
+                    required
+                    data-id="medium"
+                  />
+                  <label for="editMedium" class="label-radio editMedium"
+                    >MEDIUM</label
+                  >
+
+                  <input
+                    type="radio"
+                    name="editPriority"
+                    value="high"
+                    id="editHigh"
+                    class="input-radio high-input"
+                    required
+                    data-id="high"
+                  />
+                  <label for="editHigh" class="label-radio editHigh"
+                    >HIGH</label
+                  >
+
+                  <button class="btn-add-todo" id="btn-edit-todo" type="submit">
+                    Edit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </dialog>
         </div>
+      </div>
     </div>
-</div>
-
-</body>
+  </body>
 </html>
