@@ -1,23 +1,8 @@
 import {Player} from "./factories/Player.js";
-import {
-    initialGrid,
-    renderRandomShips,
-    renderCoordinate,
-    renderSunk,
-    renderEndGame,
-    disableGridCurrentPlayer,
-    disableAllPlayer,
-    generateDragDropShops,
-    resetRenderShips,
-    disableActionButtons,
-    hideShowDivResult,
-    enableActionButtons,
-    enableAllPlayer,
-    renderShipDirections
-} from "./dom.js";
+import { dom } from "./dom.js";
 
 class Play {
-    constructor(mode) {
+    constructor() {
         this.factoryShips = [
             // {6 : 1}
             {4 : 1}, // {lengthOfShip: numberShips}
@@ -25,11 +10,16 @@ class Play {
             {2 : 3},
             {1 : 4},
         ]
-        this.mode = mode
+        this.mode = null
         this.players = []
         this.currentPlayer = null
         this.isStart = false
         this.timer = null
+    }
+    handleButtonStartGame(event) {
+        this.mode = document.querySelector('input[name="mode"]:checked').value
+        this.initialGame()
+        dom.hideScreenChooseMode()
     }
 
     initialGame(isReset = false) {
@@ -45,13 +35,13 @@ class Play {
         }
         secondPlayer.gameboard.randomPlaceShips(this.factoryShips)
         this.players = [...this.players, secondPlayer]
-        initialGrid((x, y) => this.getAttack(x, y), this.mode)
+        dom.initialGrid((x, y) => this.getAttack(x, y), this.mode)
         this.currentPlayer = firstPlayer
     }
     randomShips(event) {
         const ships = this.currentPlayer.gameboard.randomPlaceShips(this.factoryShips)
         if(this.currentPlayer !== 'computer') {
-            renderRandomShips(ships, this.currentPlayer.name)
+            dom.renderRandomShips(ships, this.currentPlayer.name)
         }
         // disableGridCurrentPlayer(this.currentPlayer.name)
     }
@@ -72,15 +62,15 @@ class Play {
         switch (turnResult.status) {
             case "AlREADY_HIT": {
                 this.timer = setTimeout(() => {
-                    disableGridCurrentPlayer(this.currentPlayer.name)
+                    dom.disableGridCurrentPlayer(this.currentPlayer.name)
                 }, 0)
                 break
             }
             case "NOT_HIT":
                 this.timer = setTimeout(() => {
-                    renderCoordinate(turnResult.data, enemyPlayer.name, false)
+                    dom.renderCoordinate(turnResult.data, enemyPlayer.name, false)
                     this.currentPlayer = this.getEnemyPlayer()
-                    disableGridCurrentPlayer(this.currentPlayer.name)
+                    dom.disableGridCurrentPlayer(this.currentPlayer.name)
                     if (this.currentPlayer.name === 'computer') {
                         this.processComputerFire()
                     }
@@ -89,8 +79,8 @@ class Play {
             case "HIT":
                 this.timer = setTimeout(() => {
                     console.log(1)
-                    renderCoordinate(turnResult.data, enemyPlayer.name, true)
-                    disableGridCurrentPlayer(this.currentPlayer.name)
+                    dom.renderCoordinate(turnResult.data, enemyPlayer.name, true)
+                    dom.disableGridCurrentPlayer(this.currentPlayer.name)
                     if (this.currentPlayer.name === 'computer') {
                         this.processComputerFire()
                     }
@@ -99,17 +89,17 @@ class Play {
             case "SUNK":
                 this.timer = setTimeout(() => {
                     console.log('vao sunk', turnResult.data)
-                    renderSunk(turnResult.data, enemyPlayer.name)
-                    disableGridCurrentPlayer(this.currentPlayer.name)
+                    dom.renderSunk(turnResult.data, enemyPlayer.name)
+                    dom.disableGridCurrentPlayer(this.currentPlayer.name)
                     if (this.currentPlayer.name === 'computer') {
                         this.processComputerFire()
                     }
                 }, 500)
                 break
             case "END_GAME":
-                renderEndGame(turnResult.data, enemyPlayer.name, this.currentPlayer.name, this.mode)
+                dom.renderEndGame(turnResult.data, enemyPlayer.name, this.currentPlayer.name, this.mode)
         }
-        disableAllPlayer()
+        dom.disableAllPlayer()
     }
 
     getEnemyPlayer() {
@@ -118,8 +108,8 @@ class Play {
 
     generateDragDrop() {
         this.currentPlayer.gameboard.resetPlaceShips()
-        resetRenderShips(this.currentPlayer.name)
-        generateDragDropShops(this.factoryShips, 'player 1',(event) => this.reverseShipDirection(event))
+        dom.resetRenderShips(this.currentPlayer.name)
+        dom.generateDragDropShops(this.factoryShips, 'player 1',(event) => this.reverseShipDirection(event))
     }
     allowDrop(ev) {
         ev.preventDefault();
@@ -173,7 +163,7 @@ class Play {
                 return;
             }
         }
-        disableActionButtons()
+        dom.disableActionButtons()
         this.isStart = true
     }
 
@@ -184,9 +174,9 @@ class Play {
     handleCLickResetGame() {
         clearTimeout(this.timer)
         this.initialGame()
-        hideShowDivResult()
-        enableActionButtons()
-        enableAllPlayer(this.currentPlayer.name)
+        dom.hideShowDivResult()
+        dom.enableActionButtons()
+        dom.enableAllPlayer(this.currentPlayer.name)
         this.isStart = false
     }
 
@@ -204,13 +194,12 @@ class Play {
         if(!resultRelocate) {
             return;
         }
-        renderShipDirections(resultRelocate)
+        dom.renderShipDirections(resultRelocate)
     }
 }
 
 
-const play = new Play('computer')
+const play = new Play()
 
-play.initialGame()
 
 window.play = play

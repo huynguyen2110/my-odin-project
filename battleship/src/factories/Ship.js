@@ -7,7 +7,7 @@ export class Ship {
 
     addHit(coordinate) {
         const hitAttack = this.hits.find(hit => hit.x === coordinate.x && hit.y === coordinate.y)
-        if(!hitAttack) {
+        if (!hitAttack) {
             this.hits.push(coordinate)
             this.setSunk()
         }
@@ -15,7 +15,7 @@ export class Ship {
     }
 
     setSunk() {
-        if(this.hits.length === this.coordinates.length) {
+        if (this.hits.length === this.coordinates.length) {
             this.isSunk = true
         }
     }
