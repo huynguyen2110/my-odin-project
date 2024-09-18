@@ -1,0 +1,382 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+:root{
+    --primary: #1A2B33;
+    --secondary: #1E3640;
+    --grey: #A9BEC8;
+    --dark-cyan: #34C3BE;
+    --lighten-yellow: #F2B138;
+}
+
+
+body {
+    height: 100vh;
+    background-color: var(--primary);
+}
+
+input[type="radio"]{
+    display:none;
+}
+input[type="radio"] + label
+{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 50px;
+    width: 50px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+    cursor:pointer;
+}
+
+input[type="radio"].mode-computer + label {
+    background-image:url(./src/images/icon-bot-gray.svg);
+
+}
+input[type="radio"].mode-human + label {
+    background-image:url(./src/images/icon-human-gray.svg);
+}
+
+input[type="radio"].mode-computer:checked + label
+{
+    background-image:url(./src/images/icon-bot-dark.svg);
+}
+
+input[type="radio"].mode-human:checked + label
+{
+    background-image:url(./src/images/icon-human-dark.svg);
+}
+
+
+.choose-turn:has(> input[type="radio"]:checked){
+    background-color: var(--grey);
+}
+
+.choose-mode {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 30vw;
+    gap: 40px;
+    .choose-symbol {
+        color: var(--grey);
+        height: 250px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--secondary);
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0px 7px 10px 0px black;
+
+        .broad-choose-turn {
+            background-color: var(--primary);
+            padding: 15px;
+            width: 80%;
+            height: 30%;
+            border-radius: 20px;
+            display: flex;
+            gap: 15px;
+            .choose-turn {
+                width: 50%;
+                border-radius: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+            }
+        }
+    }
+
+    .button-start-game {
+        width: 50%;
+        height: 50px;
+        background-color: var(--lighten-yellow);
+        border-radius: 10px;
+        border: 0px;
+        font-weight: bold;
+        font-size: 16px;
+        color: var(--primary);
+        box-shadow: 0px 4px 6px 2px black;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.playground {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    /*max-width: 1000px;*/
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 150px;
+    width: 100%;
+
+    .name-game {
+        font-weight: bold;
+        font-size: 33px;
+    }
+
+    .start {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--secondary);
+        color: var(--grey);
+        font-weight: 700;
+        padding: 15px 35px;
+        border-radius: 5px;
+        box-shadow: 0px 3px 5px 0px black;
+        cursor: pointer;
+        border: none;
+        font-size: 18px;
+    }
+    .disableStart{
+        background-color: var(--grey);
+        color: var(--secondary);
+    }
+
+    .show-restart {
+        border-radius: 10px;
+        background-color: var(--grey);
+        height: 50px;
+        width: 50px;
+        .img-restart {
+            height: 30px;
+            padding: 10px;
+            background-color: var(--grey);
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    background-color: #0f2938;
+    border: 1px solid rgb(255, 255, 255, 0.2);
+    font-size: 14px;
+}
+.drag {
+    flex-shrink: 0;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+.flex-ship {
+    display: flex;
+    gap: 20px;
+}
+
+.flex-ship-coordinates {
+    display: flex;
+}
+.position-relative {
+    position: relative;
+}
+
+
+.play-area {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 100px;
+
+    .your-grid-container, .opponent-grid-container {
+        display: flex;
+        justify-content: space-around;
+        gap: 50px;
+        flex-basis: 50%;
+    }
+
+    .your-grid-container {
+        justify-content: flex-end;
+    }
+    .opponent-grid-container {
+        justify-content: flex-start;
+    }
+
+    .group-button {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        .button-template {
+            border-radius: 10px;
+            font-weight: 700;
+            padding: 20px 20px;
+            font-size: 18px;
+            border: 0px;
+            box-shadow: 0px 3px 3px 0px black;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .random {
+            background-color: var(--grey);
+        }
+        .choose {
+            background-color: var(--lighten-yellow);
+        }
+    }
+
+
+    .your-grid, .opponent-grid {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+
+        .text-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--grey);
+            text-transform: uppercase;
+        }
+    }
+
+    .p1-grid, .p2-grid {
+        display: grid;
+        grid-template-columns: repeat(10, 40px);
+        grid-template-rows: repeat(10, 40px);
+        margin: 0 auto;
+        cursor: pointer;
+    }
+    .place-ship {
+        box-shadow: 0 0 0 2px var(--dark-cyan);
+        z-index: 1;
+        background: var(--secondary);
+        border: none;
+    }
+    .hit {
+        background-image: url('src/images/icon-x-outline.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 30px 30px;
+        z-index: 10;
+        background: var(--secondary);
+    }
+    .not-hit {
+        background-image: url('src/images/dot.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 10px 10px;
+    }
+    .sunk {
+        background-color: var(--dark-cyan);
+        border: none;
+        z-index: 1;
+        background-image: url('src/images/icon-x-transparent.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 30px 30px;
+
+    }
+}
+
+.drag-drop {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 250px;
+}
+
+.show-result {
+    position: fixed;
+    top: 40%;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary);
+    gap: 30px;
+    z-index: 10;
+
+    .congratulate {
+        color: var(--grey);
+    }
+    .show-player-win {
+        display: flex;
+        align-items: center;
+        color: var(--dark-cyan);
+        gap: 10px;
+    }
+
+    .group-button-redirect {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        .button-redirect {
+            border-radius: 10px;
+            font-weight: 700;
+            padding: 20px 0px;
+            font-size: 18px;
+            border: 0px;
+            box-shadow: 0px 3px 3px 0px black;
+        }
+        .quit {
+            width: 25%;
+            background-color: var(--grey);
+        }
+        .next-round {
+            width: 40%;
+            background-color: var(--lighten-yellow);
+        }
+    }
+}
+
+.footer {
+    height: 70px;
+    position: fixed;
+    bottom: 0px;
+    align-content: center;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--grey);
+}
+
+.disable {
+    pointer-events: none;
+}
+
+.cursor-disabled {
+    cursor: not-allowed;
+}
+
+.hide-div {
+    display: none !important;
+}
+button {
+    cursor: pointer;
+}
