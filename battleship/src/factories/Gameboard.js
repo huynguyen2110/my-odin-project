@@ -105,8 +105,6 @@ export class Gameboard {
                 data: {x: xAxis, y: yAxis}
             }
         }
-        console.log('shipAttack', shipAttack)
-        console.log({x: xAxis, y: yAxis})
         shipAttack.addHit({x: xAxis, y: yAxis})
         if (!shipAttack.isSunk) {
             this.recentHit.push({x: xAxis, y: yAxis})
@@ -243,9 +241,7 @@ export class Gameboard {
 
 
     changeOldShipCoordinateDragDrop(xOldAxis, yOldAxis, xNewAxis, yNewAxis, isReverseDirection = false) {
-        console.log(this.ships)
         let newShips = structuredClone(this.ships);
-        console.log(newShips)
         const shipRelocate = newShips.find(ship => ship.coordinates[0].x === xOldAxis && ship.coordinates[0].y === yOldAxis)
         if (!shipRelocate) {
             console.log('err shipRelocate')

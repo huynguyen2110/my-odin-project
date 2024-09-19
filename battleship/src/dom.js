@@ -36,7 +36,7 @@ class Dom {
     }
 
     generateDragDropShops(factoryShips, playerName, reverseShipDirection) {
-        let gridPlayerContainer = getGridPlayerContainer(playerName)
+        let gridPlayerContainer = this.getGridPlayerContainer(playerName)
         const container = gridPlayerContainer.querySelector('.drag-drop');
         container.classList.remove('hide-div')
         container.innerHTML = ''

@@ -18,6 +18,10 @@ class Play {
     }
     handleButtonStartGame(event) {
         this.mode = document.querySelector('input[name="mode"]:checked').value
+        if(this.mode === "human") {
+            alert('unfinished')
+            return;
+        }
         this.initialGame()
         dom.hideScreenChooseMode()
     }
@@ -78,7 +82,6 @@ class Play {
                 break
             case "HIT":
                 this.timer = setTimeout(() => {
-                    console.log(1)
                     dom.renderCoordinate(turnResult.data, enemyPlayer.name, true)
                     dom.disableGridCurrentPlayer(this.currentPlayer.name)
                     if (this.currentPlayer.name === 'computer') {
@@ -88,7 +91,6 @@ class Play {
                 break
             case "SUNK":
                 this.timer = setTimeout(() => {
-                    console.log('vao sunk', turnResult.data)
                     dom.renderSunk(turnResult.data, enemyPlayer.name)
                     dom.disableGridCurrentPlayer(this.currentPlayer.name)
                     if (this.currentPlayer.name === 'computer') {
