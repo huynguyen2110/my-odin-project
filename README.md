@@ -23,4 +23,11 @@
 | **Knights Travails** | Algorithm | [Code](https://github.com/huynguyen2110/my-odin-project/tree/main/knights-travails) | [Demo]()                                                                      |
 | **Testing Practice** | Algorithm | [Code](https://github.com/huynguyen2110/my-odin-project/tree/main/testing-practice) | [Demo]()                                                                      |
 | **Battleship**       | Games     | [Code](https://github.com/huynguyen2110/my-odin-project/tree/main/battleship)       | [Demo](https://huynguyen2110.github.io/my-odin-project/battleship/)           |
-| **CV Application**   | Games     | [Code](https://github.com/huynguyen2110/my-odin-project/tree/main/cv-application)       | [Demo](https://cv-application-one-zeta.vercel.app/)           |
+
+
+# ⚛️ React
+
+| Project                 | Topic             | Repository                                                                             | Live Preview                                                                           |
+|-------------------------|-------------------|----------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| **CV Application**        | Pages           | [Code](https://github.com/huynguyen2110/my-odin-project/tree/main/cv-application)        | [Demo](https://cv-application-one-zeta.vercel.app/)        |
+
