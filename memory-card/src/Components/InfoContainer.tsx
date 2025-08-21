@@ -1,5 +1,9 @@
+interface InfoContainerProps {
+  chosenCharacters: number[]
+  maxScore: number
+}
 
-export default function InfoContainer() {
+export default function InfoContainer({chosenCharacters, maxScore}: InfoContainerProps) {
   return (
     <div className={"header"}>
       <div className={"title"}>
@@ -7,8 +11,8 @@ export default function InfoContainer() {
         <p>Get points by clicking on an image but don't click on any more than once!</p>
       </div>
       <div className={"score-board"}>
-        <p className={"score"}>Score: 0</p>
-        <p className={"best-score"}>Best score: 6</p>
+        <p className={"score"}>Score: {chosenCharacters.length}</p>
+        <p className={"best-score"}>Best score: {maxScore}</p>
       </div>
     </div>
   )
