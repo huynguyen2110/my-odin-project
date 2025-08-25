@@ -27,7 +27,8 @@
 
 # ⚛️ React
 
-| Project                 | Topic             | Repository                                                                             | Live Preview                                                                           |
-|-------------------------|-------------------|----------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
-| **CV Application**        | Pages           | [Code](https://github.com/huynguyen2110/my-odin-project/tree/main/cv-application)        | [Demo](https://cv-application-one-zeta.vercel.app/)        |
+| Project                 | Topic | Repository                                                                             | Live Preview                                                                           |
+|-------------------------|-------|----------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| **CV Application**        | Pages | [Code](https://github.com/huynguyen2110/my-odin-project/tree/main/cv-application)        | [Demo](https://cv-application-one-zeta.vercel.app/)        |
+| **Memory Game**        | Games | [Code](https://github.com/huynguyen2110/my-odin-project/tree/main/memory-card)        | [Demo](https://memory-card-mocha-kappa.vercel.app/)        |
 
